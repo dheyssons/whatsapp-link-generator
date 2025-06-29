@@ -1,4 +1,7 @@
 let numberIsValid = false;
+
+const generatedLinkBtn = document.querySelector("#generated_link");
+
 const textInput = document.querySelector("#msg");
 
 const telInput = document.querySelector("#tel");
@@ -6,7 +9,7 @@ telInput.addEventListener("keyup", (ev) => {
   handleInput(ev);
 });
 
-const btn = document.querySelector("button");
+const btn = document.querySelector("#btn");
 btn.addEventListener("click", () => {
   if (!numberIsValid) {
     Toastify({
@@ -25,9 +28,9 @@ btn.addEventListener("click", () => {
     return;
   }
   try {
-    navigator.clipboard.writeText(
-      generateLink(telInput.value, textInput.value)
-    );
+    const generatedLink = generateLink(telInput.value, textInput.value);
+    navigator.clipboard.writeText(generatedLink);
+    generatedLinkBtn.innerText = generatedLink;
   } catch (err) {
     console.log(err);
   } finally {
@@ -45,7 +48,6 @@ btn.addEventListener("click", () => {
       },
     }).showToast();
   }
-  console.log(generateLink(telInput.value, textInput.value));
 });
 
 function handleInput(ev) {
@@ -55,7 +57,6 @@ function handleInput(ev) {
   if (telInputValue.length == 11) {
     let str = telInputValue;
     let regex = /[0-9]{2}[9]{1}[0-9]{8}/;
-    console.log(regex.test(str));
     if (!regex.test(str)) {
       ev.target.setAttribute("style", "border-color: rgb(220, 20, 60);");
       numberIsValid = false;

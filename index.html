@@ -47,19 +47,39 @@
               />
             </div>
           </div>
-          <label for="msg">Mensagem</label>
-          <input type="text" name="msg" id="msg" required />
 
-          <button
-            style="
-              border-radius: 0.5rem;
-              height: 2rem;
-              text-transform: uppercase;
-              background-color: rgb(127, 255, 0);
-            "
-          >
-            gerar
-          </button>
+          <label for="msg">Mensagem</label>
+          <textarea type="text" name="msg" id="msg" required> </textarea>
+
+          <div style="width: 100%; margin: 1rem 0rem">
+            <button
+              id="btn"
+              style="
+                cursor: pointer;
+                width: 100%;
+                border-radius: 0.5rem;
+                height: 2rem;
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+                background-color: rgb(127, 255, 0);
+              "
+            >
+              gerar
+            </button>
+            <textarea
+              id="generated_link"
+              style="
+                resize: none;
+                overflow: hidden;
+                width: 100%;
+                border-radius: 0.5rem;
+                height: 6rem;
+                text-transform: uppercase;
+                background-color: rgb(255, 255, 255);
+                color: black;
+              "
+            ></textarea>
+          </div>
         </div>
       </div>
     </main>
