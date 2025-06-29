@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de link Whatsapp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="/src/icons/whatsapp.svg" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <div class="wrapper">
+        <!-- whatsapp logo -->
+        <img
+          src="/src/icons/whatsapp.svg"
+          alt="whatsapp logo"
+          width="64px"
+          style="filter: invert()"
+        />
+
+        <!-- inputs -->
+        <div class="inputs">
+          <div style="display: flex; flex-direction: column">
+            <label for="tel">Número de telefone</label>
+            <div>
+              <input
+                type="tel"
+                name="code"
+                id="code"
+                required
+                disabled
+                placeholder="+55"
+              />
+              <input
+                type="tel"
+                name="tel"
+                id="tel"
+                required
+                pattern="[6][2][9]{1}[0-9]{8}"
+              />
+            </div>
+          </div>
+          <label for="msg">Mensagem</label>
+          <input type="text" name="msg" id="msg" required />
+
+          <button
+            style="
+              border-radius: 0.5rem;
+              height: 2rem;
+              text-transform: uppercase;
+              background-color: rgb(127, 255, 0);
+            "
+          >
+            gerar
+          </button>
+        </div>
+      </div>
+    </main>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>
